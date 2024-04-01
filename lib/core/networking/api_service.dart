@@ -9,10 +9,12 @@ import '../../features/sign_up/data/models/sign_up_response.dart';
 
 part 'api_service.g.dart';
 
+// RestApi annotation from retrofit
 @RestApi(baseUrl: ApiConstants.apiBaseUrl)
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
+  // POST annotation from retrofit
   @POST(ApiConstants.login)
   Future<LoginResponse> login(
     @Body() LoginRequestBody loginRequestBody,

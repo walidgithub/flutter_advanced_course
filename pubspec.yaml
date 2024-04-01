@@ -38,16 +38,21 @@ dependencies:
   # State management
   flutter_bloc: ^8.1.3
   # Code generator (mainly used with cubit & retrofit)
+  # it generates methods you can use like 'when' and others
   freezed: ^2.4.5
+  # let you type @ character to get all methods of freezed
   freezed_annotation: ^2.4.1
   # for dependency injection
   get_it: ^7.6.4
   # Automatically generate code for converting to and from JSON by annotating Dart classes
+  # generate code like toJson and fromJson and JsonKey (this code not needed to see, so it separates it in another file)
+  # JsonKey >> if key of json from api like 'code' field not correct or not like I created, so it resolves it
   json_serializable: ^6.7.1
+  # let you type @ character to get all methods of json_serializable
   json_annotation: ^4.8.1
   # Networking
   dio: ^5.3.3
-  #
+  # generate code(get, post and ...) based on dio package
   retrofit: ^4.0.3
   retrofit_generator: ^8.0.4
   pretty_dio_logger: ^1.3.1

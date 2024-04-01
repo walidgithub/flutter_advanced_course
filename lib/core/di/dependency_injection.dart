@@ -13,13 +13,15 @@ final getIt = GetIt.instance;
 Future<void> setupGetIt() async {
   // Dio & ApiService
   Dio dio = DioFactory.getDio();
+  // Lazy to call it one time
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
 
   // login
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
+  // Factory to call one more time
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
 
-   // signup
+  // signup
   getIt.registerLazySingleton<SignupRepo>(() => SignupRepo(getIt()));
   getIt.registerFactory<SignupCubit>(() => SignupCubit(getIt()));
 }
